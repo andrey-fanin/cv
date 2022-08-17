@@ -1,0 +1,30 @@
+.resume__list {
+  .resume__item {
+    text-align: left;
+    border: 3px solid transparent;
+    padding: 10px;
+    transition: 1s;
+    &:hover {
+      border-color: #fff;
+    }
+    &-title {
+      font-size: 24px;
+      font-family: 'Anek Malayalam', sans-serif;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        height: 20px;
+        margin-left: 10px;
+      }
+    }
+    &-descr {
+      font-size: 16px;
+      max-width: 80vw;
+    }
+    &:not(:first-child) {
+      margin-top: 50px;
+    }
+  }
+}
