@@ -13,7 +13,7 @@ import SvgAdobe from "./assets/svg/SvgAdobe.vue";
   <container-component v-else>
     <div class="main-nav__wrap">
       <router-link to="/resume" class="main-nav__link main-nav__link--blue">open portfolio</router-link>
-      <a href="/src/assets/pdf/Andrey_Fanin_Frontend_developer_CV.pdf" download=""
+      <a href="/dist/assets/Andrey_Fanin_Frontend_developer_CV.pdf" download=""
          class="main-nav__link main-nav__link--red">download<div class="main-nav__link-svg">
           <svg-adobe/>
         </div></a>
