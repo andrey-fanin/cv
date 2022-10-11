@@ -1,0 +1,47 @@
+.main-nav__wrap {
+  display: flex;
+  flex-direction: column;
+
+  .main-nav__link {
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 40px;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      box-shadow: 0 0 30px rgb(157 34 34);
+    }
+
+    &:hover {
+      transform: translateX(-10%);
+      background: #fff;
+      color: #000;
+    }
+
+    //&--blue1 {
+    //  background: #00B4DB; /* fallback for old browsers */
+    //  background: -webkit-linear-gradient(to right, #0083B0, #00B4DB); /* Chrome 10-25, Safari 5.1-6 */
+    //  background: linear-gradient(to right, #0083B0, #00B4DB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    //
+    //}
+    //
+    //&--red1 {
+    //  background: #ED213A; /* fallback for old browsers */
+    //  background: -webkit-linear-gradient(to right, #93291E, #ED213A); /* Chrome 10-25, Safari 5.1-6 */
+    //  background: linear-gradient(to right, #93291E, #ED213A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    //
+    //}
+
+    &:not(:first-child) {
+      margin-top: 15px;
+    }
+    &-svg {
+      max-width: 15px;
+      margin-left: 10px;
+      margin-bottom: 1px;
+    }
+  }
+}
