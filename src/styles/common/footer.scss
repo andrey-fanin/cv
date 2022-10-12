@@ -1,0 +1,52 @@
+.footer {
+	display: flex;
+	margin-top: 90px;
+	gap: 180px;
+	&__title {
+		flex: 1;
+		border-top: 8px solid #fff;
+		border-bottom: 8px solid #fff;
+		padding-block: 24px 31px;
+		max-width: 1020px;
+		text-align: left;
+	}
+	&__contacts {
+		margin-top: -16px;
+		&-title {
+			font-size: 36px;
+			line-height: 44px;
+			text-align: left;
+			margin-bottom: 20px;
+		}
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 380px;
+			.footer__contact-item {
+				margin-bottom: 14px;
+				transition: 0.3s;
+				max-width: 95%;
+				&:not(:last-child) {
+					margin-right: 15px;
+				}
+
+				.item {
+					&-link {
+						display: flex;
+					}
+					&-icon {
+						margin-right: 7px;
+					}
+					&-text {
+						font-size: 18px;
+						line-height: 22px;
+						font-style: normal;
+					}
+				}
+				&:hover {
+					opacity: 0.5;
+				}
+			}
+		}
+	}
+}

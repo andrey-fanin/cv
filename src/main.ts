@@ -1,9 +1,7 @@
 import { createApp } from 'vue'
-import './styles/main.scss'
+import lang from './services/translates/'
 import App from './App.vue'
-import router from "./router";
+const app = createApp(App)
 
-const app = createApp(App);
-
-app.use(router);
+app.use(lang)
 app.mount('#app')

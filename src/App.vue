@@ -1,27 +1,29 @@
 <script setup lang="ts">
-import ContainerComponent from "./components/common/ContainerComponent.vue";
-import {computed, ref} from "vue";
-import SvgAdobe from "./assets/svg/SvgAdobe.vue";
+import HeaderComponent from './components/common/HeaderComponent.vue'
+import WrapperComponent from './components/common/WrapperComponent.vue'
+import PreviewGeneralComponent from './components/common/PreviewGeneralComponent.vue'
+import PortfolioComponent from './components/common/PortfolioComponent.vue'
+import { computed, onMounted, provide, ref } from 'vue'
+import FooterComponent from './components/common/FooterComponent.vue'
+
+if (window.innerWidth < 500) {
+	provide('mobile', true)
+}
 </script>
 
 <template>
-  <router-view
-      v-if="
-      $route.path === '/resume'
-    "
-  ></router-view>
-  <container-component v-else>
-    <div class="main-nav__wrap">
-      <router-link to="/resume" class="main-nav__link main-nav__link--blue">open portfolio</router-link>
-      <a href="/dist/assets/Andrey_Fanin_Frontend_developer_CV.pdf" download=""
-         class="main-nav__link main-nav__link--red">download<div class="main-nav__link-svg">
-          <svg-adobe/>
-        </div></a>
-
-    </div>
-  </container-component>
+	<wrapper-component class="body">
+		<section class="preview">
+			<header-component />
+			<preview-general-component />
+		</section>
+		<main class="portfolio">
+			<portfolio-component />
+		</main>
+		<footer-component />
+	</wrapper-component>
 </template>
 
 <style lang="scss">
-@import "./styles/common/main-nav";
+@import '@/styles/main.scss';
 </style>

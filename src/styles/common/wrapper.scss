@@ -1,0 +1,13 @@
+.wrapper {
+	&--body {
+		display: flex;
+		flex-direction: column;
+		padding: 75px;
+	}
+	&--header {
+		padding-bottom: 30px;
+	}
+	&--portfolio {
+		margin-top: 45px;
+	}
+}

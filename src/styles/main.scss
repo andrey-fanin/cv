@@ -1,76 +1,214 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@300;400;500;600;700&family=Spectral:wght@300;400;500;600;700&display=swap');
-@import "./normalize.css";
+@import 'normalize.css';
+@font-face {
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../assets/fonts/ProximaNova/proximanova_regular.ttf) format('ttf'),
+		url(../assets/fonts/ProximaNova/proximanova_regular.woff) format('woff');
+}
+@font-face {
+	font-family: 'Proxima Nova';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(../assets/fonts/ProximaNova/proximanova_bold.otf) format('otf'),
+		url(../assets/fonts/ProximaNova/proximanova_bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Russo One';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(../assets/fonts/RussoOne/RussoOne-Regular.ttf) format('ttf'),
+		url(../assets/fonts/RussoOne/RussoOne-Regular.woff) format('woff');
+}
 
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 :root {
-  font-family: 'Bitter', serif;
-  //font-family: 'Spectral', serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
+	$base-dark: #1d1d1b;
+	$base-light: #fff;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+	$font-primary: Proxima Nova, sans-serif;
+	$font-secondary: Russo One, sans-serif;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
+	$font-size-small: 18px;
+	$font-size-regular: 20px;
+	$font-size-medium: 36px;
+	$font-size-big: 64px;
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
+	$line-height-small: 22px;
+	$line-height-small: 24px;
+	$line-height-small: 44px;
+	$line-height-small: 77px;
+	$line-height-small: 22px;
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+	background: $base-dark;
+	font-family: $font-primary;
+	font-weight: 400;
+	color: #fff;
+	font-size: 64px;
+	text-align: center;
+	scroll-behavior: smooth;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+@media (max-width: 1200px) {
+	.portfolio__projects-row__item {
+		.projects-row__projects-list {
+			flex-direction: column;
+			> li {
+				flex: unset;
+				max-width: unset;
+			}
+		}
+		&:last-child {
+			flex-direction: column;
+			> div {
+				flex: unset !important;
+				max-width: unset !important;
+			}
+		}
+	}
+	.wrapper {
+		&--footer {
+			.footer {
+				gap: 0;
+				flex-direction: column;
+				margin-top: 30px;
+				&__contacts {
+					margin-top: 10px;
+				}
+			}
+		}
+	}
 }
 
-.card {
-  padding: 2em;
+@media (max-width: 768px) {
+	.projects-row__project-item {
+		.project__item-content__info {
+			.content__info-link {
+				min-width: unset;
+				.info__link-arrow {
+					padding: 8px 10px;
+
+					svg {
+						max-width: 30px;
+						max-height: 30px;
+					}
+				}
+			}
+		}
+	}
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
+@media (max-width: 500px) {
+	.wrapper {
+		&--body {
+			padding: 30px;
+		}
+		&--portfolio {
+			margin-top: 0;
+		}
+		.header .header__nav {
+			flex-direction: column;
+			.links__list {
+				margin-top: 10px;
+			}
+		}
+		.portfolio__projects-rows__list {
+			.portfolio__projects-row__item:last-child {
+				.about__block {
+					&-title {
+						font-size: 33px;
+						margin-bottom: 0;
+					}
+					&-descr p {
+						font-weight: 400;
+						font-size: 18px;
+						line-height: 22px;
+						&:not(:last-child) {
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+			.projects-row-title,
+			.about__block-title {
+				font-size: 33px;
+				margin-bottom: 0;
+			}
+		}
+		.projects-row__project-item {
+			.project__item-content__wrap {
+				height: auto;
+			}
+			.project__item-content {
+				margin-top: 5px;
+			}
+			.project__item-content__info {
+				flex-direction: column;
+				align-items: flex-start;
+				.content__info-text__title,
+				.content__info-text__descr {
+					color: #1d1d1b;
+					mix-blend-mode: unset;
+				}
+				.content__info-link {
+					margin-top: 10px;
+					min-width: unset;
+					align-self: flex-end;
+					.info__link-arrow {
+						padding: 8px 10px;
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+						svg {
+							max-width: 30px;
+							max-height: 30px;
+						}
+					}
+				}
+				.content__info-text__title {
+					font-size: 30px;
+				}
+			}
+		}
+		.preview__general {
+			&-info {
+				font-size: 15px;
+				margin-top: 0;
+			}
+			&-title {
+				&[locale='en'] {
+					padding-block: 12px;
+				}
+				border-top-width: 3px;
+				border-bottom-width: 3px;
+			}
+		}
+
+		&--footer {
+			.footer {
+				&__title {
+					border-width: 3px;
+					padding-block: 12px;
+					max-width: 90%;
+					&[locale='ru'] {
+						padding-block: 12px 15px;
+					}
+				}
+				&__contacts {
+					margin-top: 0;
+
+					&-title {
+						font-size: 30px;
+						line-height: 44px;
+						text-align: left;
+						margin-bottom: 10px;
+					}
+				}
+			}
+		}
+	}
 }
+//fonts: Russo One 400, Proxima Nova 400 700
+//64px
+//20px 36px 18px

@@ -1,0 +1,39 @@
+.portfolio__projects-rows__list {
+	.portfolio__projects-row__item {
+		&:not(:last-child) {
+			margin-bottom: 45px;
+		}
+		&:last-child {
+			display: flex;
+			gap: 30px;
+			> div {
+				display: flex;
+				flex: 1 1 calc(50% - 15px);
+				max-width: calc(50% - 15px);
+				flex-direction: column;
+				.projects-row__project-item {
+					max-width: unset;
+					flex: 1;
+				}
+			}
+			.about__block {
+				text-align: left;
+				&-title {
+					text-transform: uppercase;
+					font-weight: 400;
+					font-size: 64px;
+					line-height: 77px;
+					margin-bottom: 30px;
+				}
+				&-descr {
+					font-size: 36px;
+					line-height: 44px;
+					text-transform: lowercase;
+					p:not(:last-child) {
+						margin-bottom: 20px;
+					}
+				}
+			}
+		}
+	}
+}
